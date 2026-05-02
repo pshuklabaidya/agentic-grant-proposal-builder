@@ -87,6 +87,19 @@ Portfolio review notes are in:
 
     docs/PORTFOLIO_REVIEW.md
 
+
+## Streamlit Deployment
+
+Deployment checklist:
+
+    docs/STREAMLIT_DEPLOYMENT_CHECKLIST.md
+
+Main app path:
+
+    src/agentic_grant_proposal_builder/app.py
+
+Required secrets belong in Streamlit Community Cloud secrets, not in the repository.
+
 ## Safety
 
 The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.
