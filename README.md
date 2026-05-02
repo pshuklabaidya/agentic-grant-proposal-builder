@@ -11,6 +11,17 @@ Agentic Grant Proposal Builder is a Streamlit application for grant proposal wor
 
 
 
+
+## Documentation Index
+
+Documentation index:
+
+    docs/DOCS_INDEX.md
+
+Scenario guide:
+
+    docs/SCENARIOS.md
+
 ## Demo And Interview Materials
 
 Demo walkthrough:

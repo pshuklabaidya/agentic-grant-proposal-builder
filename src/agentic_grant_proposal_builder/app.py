@@ -17,7 +17,7 @@ load_runtime_config()
 st.set_page_config(page_title="Agentic Grant Proposal Builder", page_icon="AG", layout="wide")
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=300)
 def cached_demo_evaluation() -> list[dict[str, object]]:
     return [result.model_dump() for result in run_all_scenarios()]
 
