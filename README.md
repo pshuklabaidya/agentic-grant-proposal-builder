@@ -163,6 +163,17 @@ Security policy:
     SECURITY.md
 
 
+
+## License And Conduct
+
+License:
+
+    LICENSE
+
+Code of conduct:
+
+    CODE_OF_CONDUCT.md
+
 ## Contributing And Support
 
 Contributing guide:

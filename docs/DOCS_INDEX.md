@@ -68,3 +68,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [Contributing](../CONTRIBUTING.md)
 - [Support](../SUPPORT.md)
+
+- [License](../LICENSE)
+- [Code Of Conduct](../CODE_OF_CONDUCT.md)
