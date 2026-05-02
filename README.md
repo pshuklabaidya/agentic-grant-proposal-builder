@@ -64,6 +64,7 @@ Generated artifacts:
     make lint
     make test
     make eval
+    make smoke
     make check
     make run
 
@@ -87,6 +88,17 @@ Portfolio review notes are in:
 
     docs/PORTFOLIO_REVIEW.md
 
+
+
+## Streamlit Smoke Test
+
+The repository includes a local smoke test that starts the Streamlit app in headless mode and verifies that it responds.
+
+    python scripts/smoke_streamlit.py
+
+This is also included in:
+
+    make check
 
 ## Streamlit Deployment
 
