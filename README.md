@@ -44,6 +44,25 @@ Architecture documentation:
 
 The architecture document includes Mermaid diagrams for the system overview, agent workflow, OpenAI runtime path, and deterministic fallback path.
 
+
+## Project Snapshot
+
+Agentic Grant Proposal Builder is a portfolio-ready Agentic RAG application for grant proposal workflows. It combines document upload, local retrieval, funder-fit scoring, optional OpenAI tool-calling agents, requirements extraction, proposal drafting, reviewer findings, budget planning, quality-gate checks, evaluation reports, CI, and Streamlit deployment documentation.
+
+## Quick Navigation
+
+| Area | Link |
+|---|---|
+| Architecture | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
+| Demo Walkthrough | [docs/DEMO_WALKTHROUGH.md](docs/DEMO_WALKTHROUGH.md) |
+| Interview Talk Track | [docs/INTERVIEW_TALK_TRACK.md](docs/INTERVIEW_TALK_TRACK.md) |
+| Scenario Guide | [docs/SCENARIOS.md](docs/SCENARIOS.md) |
+| AI Usage And Limitations | [docs/AI_USAGE_AND_LIMITATIONS.md](docs/AI_USAGE_AND_LIMITATIONS.md) |
+| Human Review Checklist | [docs/HUMAN_REVIEW_CHECKLIST.md](docs/HUMAN_REVIEW_CHECKLIST.md) |
+| Deployment Checklist | [docs/STREAMLIT_DEPLOYMENT_CHECKLIST.md](docs/STREAMLIT_DEPLOYMENT_CHECKLIST.md) |
+| Release Checklist | [docs/RELEASE_CHECKLIST.md](docs/RELEASE_CHECKLIST.md) |
+| Documentation Index | [docs/DOCS_INDEX.md](docs/DOCS_INDEX.md) |
+
 ## Core Agents
 
 | Agent | Responsibility |
@@ -60,6 +79,22 @@ The architecture document includes Mermaid diagrams for the system overview, age
 ## OpenAI API Use
 
 When `OPENAI_API_KEY` exists and `AGPB_USE_OPENAI_AGENTS=1`, OpenAI-powered tool-calling agents run through the OpenAI Agents SDK path. Without a key, deterministic fallback remains active.
+
+
+## Fast Local Validation
+
+    make install
+    make check
+    make run
+
+Or run the checks directly:
+
+    python -m ruff check .
+    python -m pytest
+    python -m agentic_grant_proposal_builder.evaluation
+    python scripts/check_version.py
+    python scripts/repo_health.py
+    python scripts/smoke_streamlit.py
 
 ## Quickstart
 
