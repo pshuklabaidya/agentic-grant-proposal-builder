@@ -1,6 +1,13 @@
 # Agentic Grant Proposal Builder
 
+[![CI](https://github.com/pshuklabaidya/agentic-grant-proposal-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/pshuklabaidya/agentic-grant-proposal-builder/actions/workflows/ci.yml)
+
 Agentic Grant Proposal Builder is a Streamlit application for grant proposal workflows. It combines document upload, local retrieval, funder-fit scoring, funder requirements extraction, proposal drafting, reviewer findings, budget planning, quality-gate checks, and evaluation reports.
+
+
+## Repository
+
+**Repository:** https://github.com/pshuklabaidya/agentic-grant-proposal-builder
 
 ## Core Agents
 
