@@ -61,3 +61,7 @@ OpenAI Agents SDK mode runs when these values are configured:
     OPENAI_API_KEY
     AGPB_MODEL
     AGPB_USE_OPENAI_AGENTS=1
+
+- [AI Usage And Limitations](AI_USAGE_AND_LIMITATIONS.md)
+- [Human Review Checklist](HUMAN_REVIEW_CHECKLIST.md)
+- [Security Policy](../SECURITY.md)

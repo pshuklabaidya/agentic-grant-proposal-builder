@@ -1,29 +1,59 @@
 # Security Policy
 
-## Data Boundaries
+## Supported Version
 
-Projects created from this template should use synthetic or public data unless clear data rights exist.
+This is a portfolio project. The current supported baseline is:
 
-Do not commit:
+    v0.1.0
 
+## Secrets
+
+Do not commit secrets to the repository.
+
+Never commit:
+
+- `.env`
+- `.streamlit/secrets.toml`
 - API keys
-- Passwords
-- Tokens
-- Private customer data
-- Employer data
-- Confidential documents
-- Personal information
+- Access tokens
+- Private grant documents
+- Private applicant data
+- Real funder credentials
 
-## Environment Variables
+Use local environment variables, `.env`, or Streamlit Community Cloud secrets for runtime configuration.
 
-Use `.env.example` for placeholder values only.
+## Expected Local Secret Files
 
-Never commit a real `.env` file.
+Local files that may contain secrets are ignored by Git:
 
-## Responsible Use
+    .env
+    .streamlit/secrets.toml
 
-Projects created from this template should not include malicious, deceptive, privacy-invasive, credential-stealing, exploit-generating, surveillance, spam, or security-sensitive functionality.
+The repository includes examples only:
+
+    .env.example
+    .streamlit/secrets.toml.example
+
+## OpenAI API Key
+
+The OpenAI API key should be provided through one of these mechanisms:
+
+- Shell environment variable
+- Local `.env` file
+- Streamlit Community Cloud secrets
+
+The app should not print or display the API key value.
+
+## Uploaded Documents
+
+The app is intended for local or controlled demo usage. Do not upload private, confidential, regulated, or client-owned grant materials into a public deployment unless the deployment environment, storage behavior, access controls, and data-handling process have been reviewed.
 
 ## Reporting Issues
 
-Open a GitHub Issue for security concerns in demo code, documentation, dependency configuration, or data handling.
+For portfolio review, open a GitHub issue describing:
+
+- The issue
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+- Any relevant traceback without secrets

@@ -147,6 +147,21 @@ Main app path:
 
 Required secrets belong in Streamlit Community Cloud secrets, not in the repository.
 
+
+## AI Usage, Security, And Human Review
+
+AI usage and limitations:
+
+    docs/AI_USAGE_AND_LIMITATIONS.md
+
+Human review checklist:
+
+    docs/HUMAN_REVIEW_CHECKLIST.md
+
+Security policy:
+
+    SECURITY.md
+
 ## Safety
 
 The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.
