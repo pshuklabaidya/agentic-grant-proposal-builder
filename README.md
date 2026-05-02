@@ -81,6 +81,15 @@ Copy `.env.example` or `.streamlit/secrets.toml.example`, then add the real key 
 
 
 
+
+## Version Consistency
+
+Run the version consistency check:
+
+    python scripts/check_version.py
+
+The script verifies that `pyproject.toml`, package `__version__`, `CHANGELOG.md`, and `docs/RELEASE_CHECKLIST.md` agree.
+
 ## Changelog And Releases
 
 Changelog:

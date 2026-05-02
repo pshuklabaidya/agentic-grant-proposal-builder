@@ -15,6 +15,7 @@ Or run each command:
     python -m ruff check .
     python -m pytest
     python -m agentic_grant_proposal_builder.evaluation
+    python scripts/check_version.py
     python scripts/repo_health.py
     python scripts/smoke_streamlit.py
 
@@ -57,6 +58,7 @@ Confirm the following files exist and are current:
 Regenerate:
 
     python -m agentic_grant_proposal_builder.evaluation
+    python scripts/check_version.py
     python scripts/repo_health.py
 
 Expected report files:

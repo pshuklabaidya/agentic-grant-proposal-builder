@@ -1,5 +1,5 @@
 .RECIPEPREFIX := >
-.PHONY: install lint test eval health health smoke check run clean status
+.PHONY: install lint test eval version health health smoke check run clean status
 
 install:
 >python -m pip install --upgrade pip
@@ -14,13 +14,16 @@ test:
 eval:
 >python -m agentic_grant_proposal_builder.evaluation
 
+version:
+>python scripts/check_version.py
+
 health:
 >python scripts/repo_health.py
 
 smoke:
 >python scripts/smoke_streamlit.py
 
-check: lint test eval health health health smoke
+check: lint test eval version version health health health smoke
 
 run:
 >streamlit run src/agentic_grant_proposal_builder/app.py

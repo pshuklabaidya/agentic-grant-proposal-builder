@@ -76,3 +76,5 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [Changelog](../CHANGELOG.md)
 - [Release Checklist](RELEASE_CHECKLIST.md)
+
+- Version consistency script: `scripts/check_version.py`
