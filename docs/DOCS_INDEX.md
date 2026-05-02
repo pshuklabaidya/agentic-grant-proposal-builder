@@ -73,3 +73,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 - [Code Of Conduct](../CODE_OF_CONDUCT.md)
 
 - [Repository Health Report](../reports/repo_health.md)
+
+- [Changelog](../CHANGELOG.md)
+- [Release Checklist](RELEASE_CHECKLIST.md)

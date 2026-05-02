@@ -80,6 +80,19 @@ Copy `.env.example` or `.streamlit/secrets.toml.example`, then add the real key 
     OPENAI_AGENTS_DISABLE_TRACING=0
 
 
+
+## Changelog And Releases
+
+Changelog:
+
+    CHANGELOG.md
+
+Release checklist:
+
+    docs/RELEASE_CHECKLIST.md
+
+The project follows Semantic Versioning and uses a Keep a Changelog-style release history.
+
 ## Repository Health Report
 
 Generate repository health reports:
