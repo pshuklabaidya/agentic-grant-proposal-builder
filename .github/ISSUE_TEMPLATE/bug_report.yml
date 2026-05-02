@@ -1,0 +1,83 @@
+name: Bug Report
+description: Report a reproducible bug in the app, pipeline, tests, or evaluation harness.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Do not include secrets, API keys, private grant documents, or private applicant data.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence describing the bug.
+      placeholder: The Streamlit app fails when...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Streamlit dashboard
+        - Document loading
+        - Retrieval
+        - OpenAI Agents path
+        - Deterministic fallback
+        - Evaluation harness
+        - CI or packaging
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact commands or UI steps.
+      placeholder: |
+        1. Run ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: The app should...
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: The app instead...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or traceback
+      description: Paste logs without secrets.
+      render: shell
+    validations:
+      required: false
+  - type: input
+    id: python_version
+    attributes:
+      label: Python version
+      placeholder: "3.12"
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Local checks
+      options:
+        - label: I ran `python -m ruff check .`
+        - label: I ran `python -m pytest`
+        - label: I ran `python -m agentic_grant_proposal_builder.evaluation`
+        - label: I confirmed no secrets are included in this issue.
+          required: true

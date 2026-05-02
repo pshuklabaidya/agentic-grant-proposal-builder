@@ -1,0 +1,55 @@
+name: Feature Request
+description: Suggest a portfolio, app, agent, evaluation, or deployment improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a focused improvement. Do not include secrets, private grant documents, or private applicant data.
+  - type: input
+    id: summary
+    attributes:
+      label: Feature summary
+      placeholder: Add support for...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      options:
+        - Streamlit dashboard
+        - Agent workflow
+        - Retrieval
+        - Evaluation
+        - Export format
+        - Documentation
+        - Deployment
+        - Security or safety
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      placeholder: This would help because...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: The implementation could...
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundaries
+      options:
+        - label: This feature does not claim final eligibility, legal compliance, award likelihood, or funder acceptance.
+          required: true
+        - label: This feature preserves human review before submission.
+          required: true

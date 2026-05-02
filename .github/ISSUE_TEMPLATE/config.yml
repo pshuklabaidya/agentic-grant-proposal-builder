@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/pshuklabaidya/agentic-grant-proposal-builder/tree/main/docs
+    about: Review architecture, deployment, demo, and AI usage documentation.

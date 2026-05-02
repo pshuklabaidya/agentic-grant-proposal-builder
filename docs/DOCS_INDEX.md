@@ -65,3 +65,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 - [AI Usage And Limitations](AI_USAGE_AND_LIMITATIONS.md)
 - [Human Review Checklist](HUMAN_REVIEW_CHECKLIST.md)
 - [Security Policy](../SECURITY.md)
+
+- [Contributing](../CONTRIBUTING.md)
+- [Support](../SUPPORT.md)

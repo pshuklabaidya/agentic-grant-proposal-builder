@@ -162,6 +162,21 @@ Security policy:
 
     SECURITY.md
 
+
+## Contributing And Support
+
+Contributing guide:
+
+    CONTRIBUTING.md
+
+Support guide:
+
+    SUPPORT.md
+
+Issue forms and pull request template live under:
+
+    .github/
+
 ## Safety
 
 The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.
