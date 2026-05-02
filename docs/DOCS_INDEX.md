@@ -71,3 +71,5 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [License](../LICENSE)
 - [Code Of Conduct](../CODE_OF_CONDUCT.md)
+
+- [Repository Health Report](../reports/repo_health.md)

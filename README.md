@@ -79,6 +79,20 @@ Copy `.env.example` or `.streamlit/secrets.toml.example`, then add the real key 
     AGPB_USE_OPENAI_AGENTS=1
     OPENAI_AGENTS_DISABLE_TRACING=0
 
+
+## Repository Health Report
+
+Generate repository health reports:
+
+    python scripts/repo_health.py
+
+Generated outputs:
+
+    reports/repo_health.json
+    reports/repo_health.md
+
+The health report checks expected portfolio, documentation, community, security, CI, deployment, and evaluation assets.
+
 ## Evaluation Harness
 
 Synthetic scenarios live in `sample_data/scenarios`.

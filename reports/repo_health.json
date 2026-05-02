@@ -1,0 +1,232 @@
+[
+  {
+    "name": "required_file:README.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:pyproject.toml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:LICENSE",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:CODE_OF_CONDUCT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:CONTRIBUTING.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:SUPPORT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:SECURITY.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:DEPLOYMENT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:Makefile",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.gitignore",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.github/workflows/ci.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.github/ISSUE_TEMPLATE/config.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.github/ISSUE_TEMPLATE/bug_report.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.github/ISSUE_TEMPLATE/feature_request.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.github/pull_request_template.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.streamlit/config.toml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.streamlit/secrets.toml.example",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:src/agentic_grant_proposal_builder/app.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:src/agentic_grant_proposal_builder/evaluation.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:sample_data/scenarios/education_access.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:sample_data/scenarios/rural_health.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:sample_data/scenarios/small_business_support.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/ARCHITECTURE.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/AI_USAGE_AND_LIMITATIONS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/HUMAN_REVIEW_CHECKLIST.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/DOCS_INDEX.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/SCENARIOS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/DEMO_WALKTHROUGH.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/INTERVIEW_TALK_TRACK.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/PORTFOLIO_REVIEW.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/STREAMLIT_DEPLOYMENT_CHECKLIST.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "readme_term:Agentic Grant Proposal Builder",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:OpenAI",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:Streamlit",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:Evaluation",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:Safety",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:docs/ARCHITECTURE.md",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "readme_term:docs/DOCS_INDEX.md",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "gitignore_pattern:.env",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "gitignore_pattern:.streamlit/secrets.toml",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "gitignore_pattern:.venv/",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "gitignore_pattern:__pycache__/",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "gitignore_pattern:*.egg-info/",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "ci_term:python -m ruff check .",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "ci_term:python -m pytest",
+    "status": "pass",
+    "details": "present"
+  },
+  {
+    "name": "ci_term:python -m agentic_grant_proposal_builder.evaluation",
+    "status": "pass",
+    "details": "present"
+  }
+]

@@ -42,6 +42,9 @@ jobs:
       - name: Run evaluation harness
         run: python -m agentic_grant_proposal_builder.evaluation
 
+      - name: Run repository health report
+        run: python scripts/repo_health.py
+
       - name: Run Streamlit smoke test
         run: python scripts/smoke_streamlit.py
 
