@@ -50,6 +50,36 @@ Generated artifacts:
     reports/evaluation_results.json
     reports/evaluation_report.md
 
+
+## Local Commands
+
+    make install
+    make lint
+    make test
+    make eval
+    make check
+    make run
+
+## Continuous Integration
+
+GitHub Actions runs package installation, Ruff, pytest, and the evaluation harness on push and pull request.
+
+Workflow file:
+
+    .github/workflows/ci.yml
+
+The workflow uploads generated evaluation reports as CI artifacts.
+
+## Deployment
+
+Deployment instructions are in:
+
+    DEPLOYMENT.md
+
+Portfolio review notes are in:
+
+    docs/PORTFOLIO_REVIEW.md
+
 ## Safety
 
 The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.
