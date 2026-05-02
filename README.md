@@ -9,6 +9,15 @@ Agentic Grant Proposal Builder is a Streamlit application for grant proposal wor
 
 **Repository:** https://github.com/pshuklabaidya/agentic-grant-proposal-builder
 
+
+## Architecture
+
+Architecture documentation:
+
+    docs/ARCHITECTURE.md
+
+The architecture document includes Mermaid diagrams for the system overview, agent workflow, OpenAI runtime path, and deterministic fallback path.
+
 ## Core Agents
 
 | Agent | Responsibility |
