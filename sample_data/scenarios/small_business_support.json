@@ -1,0 +1,19 @@
+{
+  "scenario_id": "small_business_support",
+  "title": "Small Business Technical Assistance",
+  "organization_profile": {
+    "organization_name": "Main Street Enterprise Center",
+    "mission": "Help underserved entrepreneurs start, stabilize, and grow small businesses through coaching, workshops, and capital-readiness support.",
+    "target_population": "First-time entrepreneurs, microbusiness owners, and undercapitalized small business founders.",
+    "geography": "Metro East commercial corridors",
+    "current_programs": "Business coaching, bookkeeping workshops, licensing support, capital-readiness training, and peer learning cohorts.",
+    "requested_amount": "$325,000",
+    "project_duration": "24 months"
+  },
+  "documents": [
+    {
+      "name": "small_business_funder_guidance.txt",
+      "text": "Inclusive Entrepreneurship Capacity Grant. Eligible applicants include nonprofit business assistance providers and community economic development organizations. Funding priorities include technical assistance, capital readiness, business stabilization, underserved entrepreneur support, measurable outcomes, and corridor-level economic resilience. Required application sections include statement of need, target population, service model, implementation timeline, budget justification, evaluation plan, expected outcomes, partnership strategy, and sustainability. Allowable costs include personnel, workshops, technical assistance materials, translation, participant support, evaluation, technology, and indirect costs. Applicants should provide numeric targets, reporting methods, and evidence of organizational capacity."
+    }
+  ]
+}

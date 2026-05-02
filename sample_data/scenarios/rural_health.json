@@ -1,0 +1,19 @@
+{
+  "scenario_id": "rural_health",
+  "title": "Rural Health Navigation",
+  "organization_profile": {
+    "organization_name": "Prairie Community Health Partners",
+    "mission": "Improve access to preventive care, care navigation, health education, and social support for rural households.",
+    "target_population": "Rural adults, older residents, and families with limited transportation and limited access to preventive care.",
+    "geography": "Three-county rural service area",
+    "current_programs": "Community health navigation, mobile outreach, benefits screening, preventive health education, and referral coordination.",
+    "requested_amount": "$180,000",
+    "project_duration": "18 months"
+  },
+  "documents": [
+    {
+      "name": "rural_health_funder_guidance.txt",
+      "text": "Rural Community Health Access Fund. Eligible applicants include nonprofit and community-based organizations serving rural populations. Priority will be given to projects that improve access to preventive care, reduce transportation barriers, strengthen referral coordination, and document measurable health navigation outcomes. Required proposal sections include community need, population served, implementation plan, staffing plan, budget narrative, evaluation approach, sustainability, and risk management. Allowable costs include outreach staff, transportation support, data systems, participant materials, evaluation, and administrative support. Applicants should include measurable outputs, outcomes, and reporting cadence."
+    }
+  ]
+}

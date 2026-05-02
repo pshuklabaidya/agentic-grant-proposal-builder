@@ -1,144 +1,55 @@
-# AI Project Template
+# Agentic Grant Proposal Builder
 
-Reusable Streamlit-first template for building AI portfolio projects focused on Agentic RAG, LLM evaluation, synthetic-data demos, AI automation, and decision-support workflows.
+Agentic Grant Proposal Builder is a Streamlit application for grant proposal workflows. It combines document upload, local retrieval, funder-fit scoring, funder requirements extraction, proposal drafting, reviewer findings, budget planning, quality-gate checks, and evaluation reports.
 
-> Status: Template repository for AI portfolio projects. This repository is not a finished AI application.
+## Core Agents
 
-## Purpose
-
-This template provides a consistent starting structure for AI portfolio repositories that demonstrate:
-
-- Clear business problem framing
-- Synthetic-data disclosure
-- Streamlit-first demo design
-- Reproducible setup instructions
-- Tests and quality checks
-- Evaluation notes
-- Executive-polished documentation
-- Responsible AI boundaries
-
-## Intended Use
-
-Use this template to create portfolio projects such as:
-
-- Agentic RAG customer support assistant
-- LLM evaluation harness
-- Policy or financial document RAG assistant
-- Product analytics copilot
-- Compliance-aware document assistant
-- AI workflow automation dashboard
-- Synthetic business intelligence demo
-
-## Template Principles
-
-Every project created from this template should follow these principles:
-
-- Use synthetic or public data only unless clear data rights exist.
-- Label synthetic datasets clearly.
-- Include setup instructions.
-- Include tests.
-- Include limitations.
-- Include evaluation notes.
-
-## Repository Structure
-
-```text
-.
-├── app/
-├── src/
-├── tests/
-├── data/synthetic/
-├── docs/
-├── evals/
-├── scripts/
-├── .github/workflows/
-├── README.md
-├── SECURITY.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── requirements.txt
-├── pyproject.toml
-└── .env.example
-```
-
-## Folder And File Guide
-
-| Path | Purpose |
+| Agent | Responsibility |
 |---|---|
-| `app/` | Streamlit app entrypoints and demo UI files |
-| `src/` | Reusable application logic, RAG pipelines, agents, schemas, and utilities |
-| `tests/` | Unit tests, smoke tests, and regression checks |
-| `data/synthetic/` | Clearly labeled synthetic datasets used for demo workflows |
-| `docs/` | Architecture notes, data dictionaries, diagrams, implementation notes, and evaluation summaries |
-| `evals/` | Evaluation datasets, metrics scripts, and result summaries |
-| `scripts/` | Data generation, ingestion, evaluation, and setup scripts |
-| `.github/workflows/` | GitHub Actions workflows for tests and quality checks |
+| Intake Agent | Normalizes applicant profile and project constraints |
+| Retrieval Agent | Finds relevant grant guidance from uploaded source documents |
+| Fit Agent | Scores mission, eligibility, evidence, budget, and implementation fit |
+| Funder Requirements Extractor Agent | Extracts eligibility, rubric, budget, and evidence requirements |
+| Grant Proposal Writer Agent | Produces proposal sections |
+| Grant Reviewer Agent | Flags weaknesses and submission risks |
+| Budget Narrative Agent | Creates budget line items and narrative |
+| Proposal Quality Gate Agent | Evaluates readiness and unresolved risks |
 
-## Recommended Project README Pattern
+## OpenAI API Use
 
-Each generated project should replace this template README with a project-specific README containing:
+When `OPENAI_API_KEY` exists and `AGPB_USE_OPENAI_AGENTS=1`, OpenAI-powered tool-calling agents run through the OpenAI Agents SDK path. Without a key, deterministic fallback remains active.
 
-- Project title
-- One-sentence value proposition
-- Demo status
-- Synthetic-data disclosure
-- Business problem
-- Architecture overview
-- Features
-- Tech stack
-- Quickstart
-- Example usage
-- Evaluation
-- Tests
-- Limitations
-- Roadmap
-- License
+## Quickstart
 
-## Synthetic-Data Disclosure Template
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -e ".[dev]"
+    python -m pytest
+    python -m agentic_grant_proposal_builder.evaluation
+    streamlit run src/agentic_grant_proposal_builder/app.py
 
-Use language like this in every generated project:
+## Runtime Configuration
 
-> This project uses synthetic data for educational and portfolio demonstration purposes. It does not contain private customer data, employer data, confidential records, or production exports.
+Copy `.env.example` or `.streamlit/secrets.toml.example`, then add the real key locally. Never commit secrets.
 
-## Recommended Tech Stack
+    OPENAI_API_KEY=your_key_here
+    AGPB_MODEL=gpt-4.1-mini
+    AGPB_USE_OPENAI_AGENTS=1
+    OPENAI_AGENTS_DISABLE_TRACING=0
 
-Default stack:
+## Evaluation Harness
 
-- Python
-- Streamlit
-- Pandas
-- Pytest
-- Ruff
-- GitHub Actions
+Synthetic scenarios live in `sample_data/scenarios`.
 
-Optional additions by project type:
+Run:
 
-- LangChain or LlamaIndex for RAG workflows
-- Chroma or Qdrant for vector retrieval
-- FastAPI for API-first demos
-- Docker for stronger reproducibility
-- MkDocs or GitHub Pages for expanded documentation
+    python -m agentic_grant_proposal_builder.evaluation
 
-## Quality Checklist
+Generated artifacts:
 
-Before featuring any project created from this template:
+    reports/evaluation_results.json
+    reports/evaluation_report.md
 
-- [ ] README explains the business problem clearly.
-- [ ] Synthetic data is disclosed clearly.
-- [ ] Setup instructions work from a fresh clone.
-- [ ] Tests exist and pass.
-- [ ] GitHub Actions workflow runs successfully.
-- [ ] Limitations are explicit.
-- [ ] Evaluation notes explain quality checks, metrics, and failure cases.
-- [ ] No real secrets are committed.
-- [ ] No unsupported production claims appear.
-- [ ] Demo scope is honest and recruiter-friendly.
+## Safety
 
-## Responsible Use
-
-This template is for legitimate educational and portfolio demonstrations. It should not be used to create deceptive, malicious, privacy-invasive, credential-stealing, exploit-generating, surveillance, spam, or security-sensitive tooling.
-
-## License
-
-MIT
+The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.

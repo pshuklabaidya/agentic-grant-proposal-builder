@@ -1,12 +1,38 @@
-[project]
-name = "ai-project-template"
-version = "0.1.0"
-description = "Reusable Streamlit-first AI portfolio project template."
-requires-python = ">=3.10"
+[build-system]
+requires = ["setuptools>=68.0.0"]
+build-backend = "setuptools.build_meta"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[project]
+name = "agentic-grant-proposal-builder"
+version = "0.1.0"
+description = "Agentic RAG grant proposal builder with funder-fit scoring, tool-calling agents, review gates, and evaluation reports."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.99.0",
+    "openai-agents>=0.2.0",
+    "streamlit>=1.40.0",
+    "pandas>=2.2.0",
+    "pydantic>=2.8.0",
+    "scikit-learn>=1.5.0",
+    "python-dotenv>=1.0.1",
+    "pypdf>=4.3.0",
+    "markdown>=3.7"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.6.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,19 @@
+{
+  "scenario_id": "education_access",
+  "title": "Education Access And Workforce Readiness",
+  "organization_profile": {
+    "organization_name": "North Valley Learning Alliance",
+    "mission": "Expand equitable access to tutoring, career readiness, digital literacy, and family support.",
+    "target_population": "Low-income high school students, adult learners, and families facing education access barriers.",
+    "geography": "North Valley region",
+    "current_programs": "After-school tutoring, career coaching, digital literacy workshops, and family navigation support.",
+    "requested_amount": "$250,000",
+    "project_duration": "12 months"
+  },
+  "documents": [
+    {
+      "name": "education_access_funder_guidance.txt",
+      "text": "Community Education Innovation Grant. Eligible applicants include nonprofit organizations serving low-income learners and underserved communities. Priority areas include education access, workforce readiness, measurable outcomes, family engagement, and sustainable partnerships. Required sections include need statement, project design, implementation timeline, budget narrative, evaluation plan, outcomes, sustainability, and organizational capacity. Allowable costs include personnel, curriculum, participant support, technology, evaluation, and reasonable indirect costs. Proposals should explain how outputs and outcomes will be measured and reported."
+    }
+  ]
+}
