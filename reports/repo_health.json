@@ -1,5 +1,25 @@
 [
   {
+    "name": "required_file:scripts/docker_smoke.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/DOCKER.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:.dockerignore",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:Dockerfile",
+    "status": "pass",
+    "details": "found"
+  },
+  {
     "name": "required_file:README.md",
     "status": "pass",
     "details": "found"

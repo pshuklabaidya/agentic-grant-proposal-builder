@@ -206,6 +206,22 @@ This is also included in:
 
     make check
 
+
+## Docker
+
+Docker guide:
+
+    docs/DOCKER.md
+
+Build and run locally:
+
+    docker build -t agentic-grant-proposal-builder:local .
+    docker run --rm -p 8501:8501 agentic-grant-proposal-builder:local
+
+Run the Docker smoke test:
+
+    python scripts/docker_smoke.py
+
 ## Streamlit Deployment
 
 Deployment checklist:

@@ -81,3 +81,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [Dependency Security](DEPENDENCY_SECURITY.md)
 - Dependency audit script: `scripts/dependency_audit.py`
+
+- [Docker](DOCKER.md)
+- Docker smoke script: `scripts/docker_smoke.py`

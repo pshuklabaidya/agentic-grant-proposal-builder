@@ -1,0 +1,16 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.env
+.streamlit/secrets.toml
+reports
+.repair_backups
+*.egg-info
+dist
+build
+.DS_Store
+README.backup.*.md

@@ -13,6 +13,10 @@ class HealthCheck:
 
 
 REQUIRED_FILES = [
+    "scripts/docker_smoke.py",
+    "docs/DOCKER.md",
+    ".dockerignore",
+    "Dockerfile",
     "README.md",
     "pyproject.toml",
     "LICENSE",

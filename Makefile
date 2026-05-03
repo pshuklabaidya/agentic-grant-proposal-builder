@@ -1,5 +1,5 @@
 .RECIPEPREFIX := >
-.PHONY: install lint test eval version audit health health smoke check run clean status
+.PHONY: install lint test eval version audit health health smoke docker-build docker-run docker-smoke check run clean status
 
 install:
 >python -m pip install --upgrade pip
@@ -26,7 +26,16 @@ health:
 smoke:
 >python scripts/smoke_streamlit.py
 
-check: lint test eval version audit version audit health health health smoke
+docker-build:
+>docker build -t agentic-grant-proposal-builder:local .
+
+docker-run:
+>docker run --rm -p 8501:8501 agentic-grant-proposal-builder:local
+
+docker-smoke:
+>python scripts/docker_smoke.py
+
+check: lint test eval version audit version audit health health health smoke docker-build docker-run docker-smoke
 
 run:
 >streamlit run src/agentic_grant_proposal_builder/app.py

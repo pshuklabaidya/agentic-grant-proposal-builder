@@ -1,7 +1,7 @@
 # Repository Health Report
 
-Total checks: 46
-Passed checks: 46
+Total checks: 50
+Passed checks: 50
 Failed checks: 0
 Health score: 100.0%
 
@@ -9,6 +9,10 @@ Health score: 100.0%
 
 | Check | Status | Details |
 |---|---:|---|
+| required_file:scripts/docker_smoke.py | pass | found |
+| required_file:docs/DOCKER.md | pass | found |
+| required_file:.dockerignore | pass | found |
+| required_file:Dockerfile | pass | found |
 | required_file:README.md | pass | found |
 | required_file:pyproject.toml | pass | found |
 | required_file:LICENSE | pass | found |
