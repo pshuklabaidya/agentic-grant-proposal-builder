@@ -262,3 +262,23 @@ Issue forms and pull request template live under:
 ## Safety
 
 The app supports drafting and review only. It does not guarantee eligibility, compliance, award likelihood, legal sufficiency, or final funder acceptance.
+
+
+## Dependency Security
+
+Dependabot configuration:
+
+    .github/dependabot.yml
+
+Dependency audit script:
+
+    scripts/dependency_audit.py
+
+Dependency security documentation:
+
+    docs/DEPENDENCY_SECURITY.md
+
+Run:
+
+    make audit
+

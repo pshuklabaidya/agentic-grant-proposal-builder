@@ -45,6 +45,9 @@ jobs:
       - name: Run version consistency check
         run: python scripts/check_version.py
 
+      - name: Run dependency audit report
+        run: python scripts/dependency_audit.py
+
       - name: Run repository health report
         run: python scripts/repo_health.py
 

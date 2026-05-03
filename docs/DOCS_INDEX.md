@@ -78,3 +78,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 - [Release Checklist](RELEASE_CHECKLIST.md)
 
 - Version consistency script: `scripts/check_version.py`
+
+- [Dependency Security](DEPENDENCY_SECURITY.md)
+- Dependency audit script: `scripts/dependency_audit.py`
