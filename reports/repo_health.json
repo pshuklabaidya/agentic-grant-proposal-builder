@@ -1,5 +1,15 @@
 [
   {
+    "name": "required_file:src/agentic_grant_proposal_builder/cli.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/CLI.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
     "name": "required_file:scripts/docker_smoke.py",
     "status": "pass",
     "details": "found"

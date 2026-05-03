@@ -20,6 +20,10 @@ dependencies = [
     "markdown>=3.7"
 ]
 
+
+[project.scripts]
+agpb = "agentic_grant_proposal_builder.cli:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3.0",

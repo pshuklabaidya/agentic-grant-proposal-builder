@@ -81,6 +81,21 @@ Agentic Grant Proposal Builder is a portfolio-ready Agentic RAG application for 
 When `OPENAI_API_KEY` exists and `AGPB_USE_OPENAI_AGENTS=1`, OpenAI-powered tool-calling agents run through the OpenAI Agents SDK path. Without a key, deterministic fallback remains active.
 
 
+
+## Command Line Interface
+
+CLI guide:
+
+    docs/CLI.md
+
+List scenarios:
+
+    agpb list-scenarios
+
+Build a demo proposal package:
+
+    agpb build-scenario education_access
+
 ## Fast Local Validation
 
     make install

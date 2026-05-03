@@ -84,3 +84,6 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [Docker](DOCKER.md)
 - Docker smoke script: `scripts/docker_smoke.py`
+
+- [Command Line Interface](CLI.md)
+- CLI module: `src/agentic_grant_proposal_builder/cli.py`

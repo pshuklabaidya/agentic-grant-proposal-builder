@@ -13,6 +13,8 @@ class HealthCheck:
 
 
 REQUIRED_FILES = [
+    "src/agentic_grant_proposal_builder/cli.py",
+    "docs/CLI.md",
     "scripts/docker_smoke.py",
     "docs/DOCKER.md",
     ".dockerignore",
