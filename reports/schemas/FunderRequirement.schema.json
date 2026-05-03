@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "evidence": {
+      "title": "Evidence",
+      "type": "string"
+    },
+    "priority": {
+      "default": "medium",
+      "title": "Priority",
+      "type": "string"
+    },
+    "requirement": {
+      "title": "Requirement",
+      "type": "string"
+    },
+    "requirement_type": {
+      "title": "Requirement Type",
+      "type": "string"
+    },
+    "source": {
+      "default": "retrieved guidance",
+      "title": "Source",
+      "type": "string"
+    }
+  },
+  "required": [
+    "requirement_type",
+    "requirement",
+    "evidence"
+  ],
+  "title": "FunderRequirement",
+  "type": "object"
+}

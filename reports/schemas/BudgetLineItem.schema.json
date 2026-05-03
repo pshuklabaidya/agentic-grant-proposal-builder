@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "amount": {
+      "title": "Amount",
+      "type": "number"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "justification": {
+      "title": "Justification",
+      "type": "string"
+    }
+  },
+  "required": [
+    "category",
+    "amount",
+    "justification"
+  ],
+  "title": "BudgetLineItem",
+  "type": "object"
+}

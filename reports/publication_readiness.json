@@ -1,0 +1,137 @@
+[
+  {
+    "name": "file:README.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:CHANGELOG.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:LICENSE",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:CODE_OF_CONDUCT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:CONTRIBUTING.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:SUPPORT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:SECURITY.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:DEPLOYMENT.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:Dockerfile",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:.github/workflows/ci.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:.github/dependabot.yml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:.streamlit/config.toml",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:.streamlit/secrets.toml.example",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:src/agentic_grant_proposal_builder/app.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:docs/DOCS_INDEX.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:docs/ARCHITECTURE.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:docs/STREAMLIT_DEPLOYMENT_CHECKLIST.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:docs/CI_ARTIFACTS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:docs/SCHEMAS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:reports/evaluation_report.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:reports/repo_health.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:reports/schemas/OrganizationProfile.schema.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "file:reports/schemas/ProposalPackage.schema.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "git_remote",
+    "status": "pass",
+    "details": "origin\thttps://github.com/pshuklabaidya/agentic-grant-proposal-builder.git (fetch)\norigin\thttps://github.com/pshuklabaidya/agentic-grant-proposal-builder.git (push)"
+  },
+  {
+    "name": "current_branch",
+    "status": "pass",
+    "details": "main"
+  },
+  {
+    "name": "working_tree",
+    "status": "warn",
+    "details": "M .github/workflows/ci.yml;  M Makefile;  M README.md;  M docs/DOCS_INDEX.md;  M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/repo_health.json;  M reports/repo_health.md;  M scripts/repo_health.py; ?? docs/CI_ARTIFACTS.md; ?? docs/PUBLICATION_READINESS.md; ?? docs/SCHEMAS.md; ?? reports/schemas/; ?? scripts/export_schemas.py; ?? scripts/publication_readiness.py; ?? tests/test_ci_artifacts.py; ?? tests/test_publication_readiness.py; ?? tests/test_schema_exports.py"
+  },
+  {
+    "name": "gh_repo_view",
+    "status": "warn",
+    "details": "To get started with GitHub CLI, please run:  gh auth login\nAlternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token."
+  }
+]

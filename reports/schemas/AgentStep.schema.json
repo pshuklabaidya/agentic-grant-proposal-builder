@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "agent_name": {
+      "title": "Agent Name",
+      "type": "string"
+    },
+    "confidence": {
+      "default": "medium",
+      "title": "Confidence",
+      "type": "string"
+    },
+    "output_summary": {
+      "title": "Output Summary",
+      "type": "string"
+    },
+    "responsibility": {
+      "title": "Responsibility",
+      "type": "string"
+    }
+  },
+  "required": [
+    "agent_name",
+    "responsibility",
+    "output_summary"
+  ],
+  "title": "AgentStep",
+  "type": "object"
+}

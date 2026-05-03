@@ -1,0 +1,50 @@
+{
+  "$defs": {
+    "BudgetLineItem": {
+      "properties": {
+        "amount": {
+          "title": "Amount",
+          "type": "number"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "justification": {
+          "title": "Justification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "amount",
+        "justification"
+      ],
+      "title": "BudgetLineItem",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "line_items": {
+      "items": {
+        "$ref": "#/$defs/BudgetLineItem"
+      },
+      "title": "Line Items",
+      "type": "array"
+    },
+    "narrative": {
+      "title": "Narrative",
+      "type": "string"
+    },
+    "total_request": {
+      "title": "Total Request",
+      "type": "number"
+    }
+  },
+  "required": [
+    "total_request",
+    "narrative"
+  ],
+  "title": "BudgetPlan",
+  "type": "object"
+}

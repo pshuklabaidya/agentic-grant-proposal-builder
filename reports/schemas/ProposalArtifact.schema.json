@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "budget_narrative": {
+      "title": "Budget Narrative",
+      "type": "string"
+    },
+    "evaluation_plan": {
+      "title": "Evaluation Plan",
+      "type": "string"
+    },
+    "evidence_used": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Used",
+      "type": "array"
+    },
+    "executive_summary": {
+      "title": "Executive Summary",
+      "type": "string"
+    },
+    "funder_alignment": {
+      "title": "Funder Alignment",
+      "type": "string"
+    },
+    "need_statement": {
+      "title": "Need Statement",
+      "type": "string"
+    },
+    "outcomes": {
+      "title": "Outcomes",
+      "type": "string"
+    },
+    "project_design": {
+      "title": "Project Design",
+      "type": "string"
+    },
+    "reviewer_risks": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reviewer Risks",
+      "type": "array"
+    },
+    "sustainability": {
+      "title": "Sustainability",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "executive_summary",
+    "need_statement",
+    "project_design",
+    "outcomes",
+    "budget_narrative",
+    "evaluation_plan",
+    "sustainability",
+    "funder_alignment"
+  ],
+  "title": "ProposalArtifact",
+  "type": "object"
+}

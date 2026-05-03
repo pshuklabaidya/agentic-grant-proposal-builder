@@ -91,3 +91,14 @@ OpenAI Agents SDK mode runs when these values are configured:
 - [CLI Examples](CLI_EXAMPLES.md)
 - CLI smoke script: `scripts/cli_smoke.py`
 - CLI sample profile: `sample_data/cli_example/profile.json`
+
+- [JSON Schema Contracts](SCHEMAS.md)
+- Schema export script: `scripts/export_schemas.py`
+- Generated schemas: `reports/schemas/`
+
+- [CI Artifacts](CI_ARTIFACTS.md)
+- CI artifact bundle: generated reports and schemas
+
+- [Publication Readiness](PUBLICATION_READINESS.md)
+- Publication readiness script: `scripts/publication_readiness.py`
+- Publication readiness report: `reports/publication_readiness.md`

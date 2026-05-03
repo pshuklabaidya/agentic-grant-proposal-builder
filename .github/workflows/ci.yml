@@ -57,6 +57,32 @@ jobs:
       - name: Run Streamlit smoke test
         run: python scripts/smoke_streamlit.py
 
+
+
+      - name: Export JSON Schema contracts
+        run: python scripts/export_schemas.py
+
+      - name: Run publication readiness report
+        run: python scripts/publication_readiness.py
+
+      - name: Upload generated reports and schemas
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-reports-and-schemas-python-${{ matrix.python-version }}
+          path: |
+            reports/evaluation_results.json
+            reports/evaluation_report.md
+            reports/repo_health.json
+            reports/repo_health.md
+            reports/dependency_audit.json
+            reports/dependency_audit.md
+            reports/publication_readiness.json
+            reports/publication_readiness.md
+            reports/schemas/
+            docs/SCHEMAS.md
+          if-no-files-found: warn
+          retention-days: 14
+
       - name: Upload evaluation reports
         uses: actions/upload-artifact@v4
         with:

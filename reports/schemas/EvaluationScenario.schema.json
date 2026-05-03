@@ -1,0 +1,95 @@
+{
+  "$defs": {
+    "GrantDocument": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "source_type": {
+          "default": "uploaded",
+          "title": "Source Type",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "text"
+      ],
+      "title": "GrantDocument",
+      "type": "object"
+    },
+    "OrganizationProfile": {
+      "properties": {
+        "current_programs": {
+          "default": "Tutoring, career coaching, digital literacy, and case management.",
+          "title": "Current Programs",
+          "type": "string"
+        },
+        "geography": {
+          "default": "Regional service area",
+          "title": "Geography",
+          "type": "string"
+        },
+        "mission": {
+          "default": "Expand equitable access to education, workforce readiness, and community support.",
+          "title": "Mission",
+          "type": "string"
+        },
+        "organization_name": {
+          "default": "Example Community Impact Organization",
+          "title": "Organization Name",
+          "type": "string"
+        },
+        "project_duration": {
+          "default": "12 months",
+          "title": "Project Duration",
+          "type": "string"
+        },
+        "requested_amount": {
+          "default": "$250,000",
+          "title": "Requested Amount",
+          "type": "string"
+        },
+        "target_population": {
+          "default": "Low-income students, adult learners, and underserved families.",
+          "title": "Target Population",
+          "type": "string"
+        }
+      },
+      "title": "OrganizationProfile",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/GrantDocument"
+      },
+      "title": "Documents",
+      "type": "array"
+    },
+    "organization_profile": {
+      "$ref": "#/$defs/OrganizationProfile"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "title",
+    "organization_profile"
+  ],
+  "title": "EvaluationScenario",
+  "type": "object"
+}

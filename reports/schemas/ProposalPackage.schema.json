@@ -1,0 +1,279 @@
+{
+  "$defs": {
+    "AgentStep": {
+      "properties": {
+        "agent_name": {
+          "title": "Agent Name",
+          "type": "string"
+        },
+        "confidence": {
+          "default": "medium",
+          "title": "Confidence",
+          "type": "string"
+        },
+        "output_summary": {
+          "title": "Output Summary",
+          "type": "string"
+        },
+        "responsibility": {
+          "title": "Responsibility",
+          "type": "string"
+        }
+      },
+      "required": [
+        "agent_name",
+        "responsibility",
+        "output_summary"
+      ],
+      "title": "AgentStep",
+      "type": "object"
+    },
+    "BudgetLineItem": {
+      "properties": {
+        "amount": {
+          "title": "Amount",
+          "type": "number"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "justification": {
+          "title": "Justification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "amount",
+        "justification"
+      ],
+      "title": "BudgetLineItem",
+      "type": "object"
+    },
+    "BudgetPlan": {
+      "properties": {
+        "line_items": {
+          "items": {
+            "$ref": "#/$defs/BudgetLineItem"
+          },
+          "title": "Line Items",
+          "type": "array"
+        },
+        "narrative": {
+          "title": "Narrative",
+          "type": "string"
+        },
+        "total_request": {
+          "title": "Total Request",
+          "type": "number"
+        }
+      },
+      "required": [
+        "total_request",
+        "narrative"
+      ],
+      "title": "BudgetPlan",
+      "type": "object"
+    },
+    "ComplianceCheck": {
+      "properties": {
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "requirement": {
+          "title": "Requirement",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requirement",
+        "status",
+        "evidence"
+      ],
+      "title": "ComplianceCheck",
+      "type": "object"
+    },
+    "FunderRequirement": {
+      "properties": {
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "priority": {
+          "default": "medium",
+          "title": "Priority",
+          "type": "string"
+        },
+        "requirement": {
+          "title": "Requirement",
+          "type": "string"
+        },
+        "requirement_type": {
+          "title": "Requirement Type",
+          "type": "string"
+        },
+        "source": {
+          "default": "retrieved guidance",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requirement_type",
+        "requirement",
+        "evidence"
+      ],
+      "title": "FunderRequirement",
+      "type": "object"
+    },
+    "QualityCheck": {
+      "properties": {
+        "check_name": {
+          "title": "Check Name",
+          "type": "string"
+        },
+        "finding": {
+          "title": "Finding",
+          "type": "string"
+        },
+        "recommended_fix": {
+          "title": "Recommended Fix",
+          "type": "string"
+        },
+        "severity": {
+          "title": "Severity",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check_name",
+        "status",
+        "severity",
+        "finding",
+        "recommended_fix"
+      ],
+      "title": "QualityCheck",
+      "type": "object"
+    },
+    "QualityReport": {
+      "properties": {
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/QualityCheck"
+          },
+          "title": "Checks",
+          "type": "array"
+        },
+        "final_recommendation": {
+          "title": "Final Recommendation",
+          "type": "string"
+        },
+        "overall_status": {
+          "title": "Overall Status",
+          "type": "string"
+        },
+        "readiness_score": {
+          "title": "Readiness Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "overall_status",
+        "readiness_score",
+        "final_recommendation"
+      ],
+      "title": "QualityReport",
+      "type": "object"
+    },
+    "ReviewerFinding": {
+      "properties": {
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "finding": {
+          "title": "Finding",
+          "type": "string"
+        },
+        "recommended_fix": {
+          "title": "Recommended Fix",
+          "type": "string"
+        },
+        "severity": {
+          "title": "Severity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "severity",
+        "finding",
+        "recommended_fix"
+      ],
+      "title": "ReviewerFinding",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "budget_plan": {
+      "$ref": "#/$defs/BudgetPlan"
+    },
+    "compliance_checks": {
+      "items": {
+        "$ref": "#/$defs/ComplianceCheck"
+      },
+      "title": "Compliance Checks",
+      "type": "array"
+    },
+    "funder_requirements": {
+      "items": {
+        "$ref": "#/$defs/FunderRequirement"
+      },
+      "title": "Funder Requirements",
+      "type": "array"
+    },
+    "quality_report": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QualityReport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "reviewer_findings": {
+      "items": {
+        "$ref": "#/$defs/ReviewerFinding"
+      },
+      "title": "Reviewer Findings",
+      "type": "array"
+    },
+    "workflow_trace": {
+      "items": {
+        "$ref": "#/$defs/AgentStep"
+      },
+      "title": "Workflow Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "workflow_trace",
+    "reviewer_findings",
+    "compliance_checks",
+    "budget_plan"
+  ],
+  "title": "ProposalPackage",
+  "type": "object"
+}

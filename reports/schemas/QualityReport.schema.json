@@ -1,0 +1,65 @@
+{
+  "$defs": {
+    "QualityCheck": {
+      "properties": {
+        "check_name": {
+          "title": "Check Name",
+          "type": "string"
+        },
+        "finding": {
+          "title": "Finding",
+          "type": "string"
+        },
+        "recommended_fix": {
+          "title": "Recommended Fix",
+          "type": "string"
+        },
+        "severity": {
+          "title": "Severity",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check_name",
+        "status",
+        "severity",
+        "finding",
+        "recommended_fix"
+      ],
+      "title": "QualityCheck",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/QualityCheck"
+      },
+      "title": "Checks",
+      "type": "array"
+    },
+    "final_recommendation": {
+      "title": "Final Recommendation",
+      "type": "string"
+    },
+    "overall_status": {
+      "title": "Overall Status",
+      "type": "string"
+    },
+    "readiness_score": {
+      "title": "Readiness Score",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "overall_status",
+    "readiness_score",
+    "final_recommendation"
+  ],
+  "title": "QualityReport",
+  "type": "object"
+}

@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "finding": {
+      "title": "Finding",
+      "type": "string"
+    },
+    "recommended_fix": {
+      "title": "Recommended Fix",
+      "type": "string"
+    },
+    "severity": {
+      "title": "Severity",
+      "type": "string"
+    }
+  },
+  "required": [
+    "category",
+    "severity",
+    "finding",
+    "recommended_fix"
+  ],
+  "title": "ReviewerFinding",
+  "type": "object"
+}

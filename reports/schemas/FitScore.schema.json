@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "budget_fit": {
+      "title": "Budget Fit",
+      "type": "integer"
+    },
+    "eligibility_fit": {
+      "title": "Eligibility Fit",
+      "type": "integer"
+    },
+    "evidence_fit": {
+      "title": "Evidence Fit",
+      "type": "integer"
+    },
+    "implementation_fit": {
+      "title": "Implementation Fit",
+      "type": "integer"
+    },
+    "mission_fit": {
+      "title": "Mission Fit",
+      "type": "integer"
+    },
+    "overall": {
+      "title": "Overall",
+      "type": "integer"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mission_fit",
+    "eligibility_fit",
+    "evidence_fit",
+    "budget_fit",
+    "implementation_fit",
+    "overall",
+    "rationale"
+  ],
+  "title": "FitScore",
+  "type": "object"
+}

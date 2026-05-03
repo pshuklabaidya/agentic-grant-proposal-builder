@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "source_type": {
+      "default": "uploaded",
+      "title": "Source Type",
+      "type": "string"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "text"
+  ],
+  "title": "GrantDocument",
+  "type": "object"
+}

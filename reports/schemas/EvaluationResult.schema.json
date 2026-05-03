@@ -1,0 +1,68 @@
+{
+  "properties": {
+    "budget_line_item_total": {
+      "title": "Budget Line Item Total",
+      "type": "number"
+    },
+    "budget_total_request": {
+      "title": "Budget Total Request",
+      "type": "number"
+    },
+    "compliance_needs_review_count": {
+      "title": "Compliance Needs Review Count",
+      "type": "integer"
+    },
+    "evidence_count": {
+      "title": "Evidence Count",
+      "type": "integer"
+    },
+    "funder_requirement_count": {
+      "title": "Funder Requirement Count",
+      "type": "integer"
+    },
+    "overall_fit_score": {
+      "title": "Overall Fit Score",
+      "type": "integer"
+    },
+    "quality_readiness_score": {
+      "title": "Quality Readiness Score",
+      "type": "integer"
+    },
+    "quality_status": {
+      "title": "Quality Status",
+      "type": "string"
+    },
+    "reviewer_finding_count": {
+      "title": "Reviewer Finding Count",
+      "type": "integer"
+    },
+    "runtime_path": {
+      "title": "Runtime Path",
+      "type": "string"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "title",
+    "overall_fit_score",
+    "evidence_count",
+    "funder_requirement_count",
+    "reviewer_finding_count",
+    "compliance_needs_review_count",
+    "budget_total_request",
+    "budget_line_item_total",
+    "quality_status",
+    "quality_readiness_score",
+    "runtime_path"
+  ],
+  "title": "EvaluationResult",
+  "type": "object"
+}

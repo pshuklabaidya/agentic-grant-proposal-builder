@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "check_name": {
+      "title": "Check Name",
+      "type": "string"
+    },
+    "finding": {
+      "title": "Finding",
+      "type": "string"
+    },
+    "recommended_fix": {
+      "title": "Recommended Fix",
+      "type": "string"
+    },
+    "severity": {
+      "title": "Severity",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "check_name",
+    "status",
+    "severity",
+    "finding",
+    "recommended_fix"
+  ],
+  "title": "QualityCheck",
+  "type": "object"
+}

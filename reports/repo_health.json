@@ -1,5 +1,30 @@
 [
   {
+    "name": "required_file:docs/CI_ARTIFACTS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:reports/schemas/ProposalPackage.schema.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:reports/schemas/OrganizationProfile.schema.json",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:scripts/export_schemas.py",
+    "status": "pass",
+    "details": "found"
+  },
+  {
+    "name": "required_file:docs/SCHEMAS.md",
+    "status": "pass",
+    "details": "found"
+  },
+  {
     "name": "required_file:sample_data/cli_example/program_notes.txt",
     "status": "pass",
     "details": "found"

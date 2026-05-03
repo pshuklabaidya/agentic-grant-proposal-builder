@@ -13,6 +13,11 @@ class HealthCheck:
 
 
 REQUIRED_FILES = [
+    "docs/CI_ARTIFACTS.md",
+    "reports/schemas/ProposalPackage.schema.json",
+    "reports/schemas/OrganizationProfile.schema.json",
+    "scripts/export_schemas.py",
+    "docs/SCHEMAS.md",
     "sample_data/cli_example/program_notes.txt",
     "sample_data/cli_example/funder_guidance.txt",
     "sample_data/cli_example/profile.json",

@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "evidence": {
+      "title": "Evidence",
+      "type": "string"
+    },
+    "requirement": {
+      "title": "Requirement",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "requirement",
+    "status",
+    "evidence"
+  ],
+  "title": "ComplianceCheck",
+  "type": "object"
+}

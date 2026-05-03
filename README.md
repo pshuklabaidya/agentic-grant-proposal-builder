@@ -97,6 +97,41 @@ Build from sample files:
 
     agpb build-files --profile sample_data/cli_example/profile.json --documents sample_data/cli_example/funder_guidance.txt sample_data/cli_example/program_notes.txt --stem riverbend
 
+
+
+
+## Publication Readiness
+
+Publication readiness guide:
+
+    docs/PUBLICATION_READINESS.md
+
+Generate the publication readiness report:
+
+    python scripts/publication_readiness.py
+
+## CI Artifacts
+
+CI artifact documentation:
+
+    docs/CI_ARTIFACTS.md
+
+The workflow uploads generated evaluation reports, repository health reports, dependency audit reports, publication readiness reports, and JSON Schema contracts.
+
+## JSON Schema Contracts
+
+Schema documentation:
+
+    docs/SCHEMAS.md
+
+Regenerate schemas:
+
+    python scripts/export_schemas.py
+
+Generated schema files:
+
+    reports/schemas/
+
 ## Command Line Interface
 
 CLI guide:
