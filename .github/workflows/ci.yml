@@ -66,7 +66,7 @@ jobs:
         run: python scripts/publication_readiness.py
 
       - name: Upload generated reports and schemas
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: generated-reports-and-schemas-python-${{ matrix.python-version }}
           path: |
@@ -84,7 +84,7 @@ jobs:
           retention-days: 14
 
       - name: Upload evaluation reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: evaluation-reports-python-${{ matrix.python-version }}
           path: reports/
