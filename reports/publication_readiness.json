@@ -127,7 +127,7 @@
   {
     "name": "working_tree",
     "status": "warn",
-    "details": "M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/publication_readiness.json;  M reports/publication_readiness.md;  M scripts/cli_smoke.py"
+    "details": "M reports/evaluation_report.md;  M reports/evaluation_results.json"
   },
   {
     "name": "gh_repo_view",
