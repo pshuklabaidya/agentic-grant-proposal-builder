@@ -127,7 +127,7 @@
   {
     "name": "working_tree",
     "status": "warn",
-    "details": "M .github/workflows/ci.yml;  M Makefile;  M README.md;  M docs/DOCS_INDEX.md;  M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/repo_health.json;  M reports/repo_health.md;  M scripts/repo_health.py; ?? docs/CI_ARTIFACTS.md; ?? docs/PUBLICATION_READINESS.md; ?? docs/SCHEMAS.md; ?? reports/schemas/; ?? scripts/export_schemas.py; ?? scripts/publication_readiness.py; ?? tests/test_ci_artifacts.py; ?? tests/test_publication_readiness.py; ?? tests/test_schema_exports.py"
+    "details": "M Makefile;  M README.md;  M docs/DOCS_INDEX.md;  M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/repo_health.json;  M reports/repo_health.md;  M scripts/repo_health.py; ?? docs/RELEASE_AUTOMATION.md; ?? reports/release/; ?? scripts/create_release.py; ?? tests/test_release_automation.py"
   },
   {
     "name": "gh_repo_view",

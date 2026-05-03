@@ -5,11 +5,11 @@
     "overall_fit_score": 74,
     "evidence_count": 1,
     "funder_requirement_count": 5,
-    "reviewer_finding_count": 4,
+    "reviewer_finding_count": 3,
     "compliance_needs_review_count": 0,
     "budget_total_request": 250000.0,
     "budget_line_item_total": 250000.0,
-    "quality_status": "Ready with Reservations",
+    "quality_status": "Moderate readiness with notable risks",
     "quality_readiness_score": 74,
     "runtime_path": "OpenAI Agents SDK"
   },
@@ -23,8 +23,8 @@
     "compliance_needs_review_count": 0,
     "budget_total_request": 180000.0,
     "budget_line_item_total": 180000.0,
-    "quality_status": "Moderate readiness with notable gaps",
-    "quality_readiness_score": 79,
+    "quality_status": "Moderate Readiness",
+    "quality_readiness_score": 75,
     "runtime_path": "OpenAI Agents SDK"
   },
   {
@@ -37,7 +37,7 @@
     "compliance_needs_review_count": 0,
     "budget_total_request": 325000.0,
     "budget_line_item_total": 325000.0,
-    "quality_status": "Moderate Readiness",
+    "quality_status": "Moderate Risk - Ready with Improvements",
     "quality_readiness_score": 77,
     "runtime_path": "OpenAI Agents SDK"
   }

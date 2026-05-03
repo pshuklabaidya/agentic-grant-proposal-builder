@@ -102,3 +102,7 @@ OpenAI Agents SDK mode runs when these values are configured:
 - [Publication Readiness](PUBLICATION_READINESS.md)
 - Publication readiness script: `scripts/publication_readiness.py`
 - Publication readiness report: `reports/publication_readiness.md`
+
+- [Release Automation](RELEASE_AUTOMATION.md)
+- Release automation script: `scripts/create_release.py`
+- Release manifest: `reports/release/release_manifest_v0.1.0.json`

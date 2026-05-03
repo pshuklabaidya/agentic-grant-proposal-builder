@@ -53,7 +53,7 @@ Run only after GitHub CLI authentication has repository administration permissio
 | file:reports/schemas/ProposalPackage.schema.json | pass | found |
 | git_remote | pass | origin	https://github.com/pshuklabaidya/agentic-grant-proposal-builder.git (fetch)<br>origin	https://github.com/pshuklabaidya/agentic-grant-proposal-builder.git (push) |
 | current_branch | pass | main |
-| working_tree | warn | M .github/workflows/ci.yml;  M Makefile;  M README.md;  M docs/DOCS_INDEX.md;  M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/repo_health.json;  M reports/repo_health.md;  M scripts/repo_health.py; ?? docs/CI_ARTIFACTS.md; ?? docs/PUBLICATION_READINESS.md; ?? docs/SCHEMAS.md; ?? reports/schemas/; ?? scripts/export_schemas.py; ?? scripts/publication_readiness.py; ?? tests/test_ci_artifacts.py; ?? tests/test_publication_readiness.py; ?? tests/test_schema_exports.py |
+| working_tree | warn | M Makefile;  M README.md;  M docs/DOCS_INDEX.md;  M reports/evaluation_report.md;  M reports/evaluation_results.json;  M reports/repo_health.json;  M reports/repo_health.md;  M scripts/repo_health.py; ?? docs/RELEASE_AUTOMATION.md; ?? reports/release/; ?? scripts/create_release.py; ?? tests/test_release_automation.py |
 | gh_repo_view | warn | To get started with GitHub CLI, please run:  gh auth login<br>Alternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token. |
 
 ## Interpretation

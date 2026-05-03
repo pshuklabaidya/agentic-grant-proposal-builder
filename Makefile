@@ -1,5 +1,5 @@
 .RECIPEPREFIX := >
-.PHONY: install lint test eval cli-demo cli-smoke version audit health health smoke docker-build docker-run docker-smoke check run clean status
+.PHONY: install lint test eval schemas release-plan release-create cli-demo cli-smoke version audit health health smoke docker-build docker-run docker-smoke check run clean status
 
 install:
 >python -m pip install --upgrade pip
@@ -13,6 +13,15 @@ test:
 
 eval:
 >python -m agentic_grant_proposal_builder.evaluation
+
+schemas:
+>python scripts/export_schemas.py
+
+release-plan:
+>python scripts/create_release.py
+
+release-create:
+>python scripts/create_release.py --execute
 
 cli-demo:
 >agpb build-scenario education_access
@@ -41,13 +50,13 @@ docker-run:
 docker-smoke:
 >python scripts/docker_smoke.py
 
-check: lint test eval cli-demo cli-smoke version audit version audit health health health smoke docker-build docker-run docker-smoke
+check: lint test eval schemas release-plan release-create cli-demo cli-smoke version audit version audit health health health smoke docker-build docker-run docker-smoke
 
 run:
 >streamlit run src/agentic_grant_proposal_builder/app.py
 
 clean:
->rm -rf .pytest_cache .ruff_cache reports/*.json reports/*.md
+>rm -rf .pytest_cache .ruff_cache reports/*.json reports/*.md reports/schemas
 >find . -type d -name "__pycache__" -prune -exec rm -rf {} +
 
 status:

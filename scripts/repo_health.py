@@ -13,6 +13,9 @@ class HealthCheck:
 
 
 REQUIRED_FILES = [
+    "reports/release/release_manifest_v0.1.0.json",
+    "scripts/create_release.py",
+    "docs/RELEASE_AUTOMATION.md",
     "docs/CI_ARTIFACTS.md",
     "reports/schemas/ProposalPackage.schema.json",
     "reports/schemas/OrganizationProfile.schema.json",

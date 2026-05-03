@@ -1,7 +1,7 @@
 # Repository Health Report
 
-Total checks: 62
-Passed checks: 62
+Total checks: 65
+Passed checks: 65
 Failed checks: 0
 Health score: 100.0%
 
@@ -9,6 +9,9 @@ Health score: 100.0%
 
 | Check | Status | Details |
 |---|---:|---|
+| required_file:reports/release/release_manifest_v0.1.0.json | pass | found |
+| required_file:scripts/create_release.py | pass | found |
+| required_file:docs/RELEASE_AUTOMATION.md | pass | found |
 | required_file:docs/CI_ARTIFACTS.md | pass | found |
 | required_file:reports/schemas/ProposalPackage.schema.json | pass | found |
 | required_file:reports/schemas/OrganizationProfile.schema.json | pass | found |

@@ -190,6 +190,21 @@ Run the version consistency check:
 
 The script verifies that `pyproject.toml`, package `__version__`, `CHANGELOG.md`, and `docs/RELEASE_CHECKLIST.md` agree.
 
+
+## Release Automation
+
+Release automation guide:
+
+    docs/RELEASE_AUTOMATION.md
+
+Dry-run release plan:
+
+    python scripts/create_release.py
+
+Publish release:
+
+    python scripts/create_release.py --execute
+
 ## Changelog And Releases
 
 Changelog:

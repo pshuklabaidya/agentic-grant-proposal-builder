@@ -1,0 +1,168 @@
+{
+  "version": "0.1.0",
+  "tag": "v0.1.0",
+  "repo": "pshuklabaidya/agentic-grant-proposal-builder",
+  "title": "Agentic Grant Proposal Builder v0.1.0",
+  "release_notes": "reports/release/release_notes_v0.1.0.md",
+  "assets": [
+    {
+      "path": "reports/evaluation_results.json",
+      "exists": true
+    },
+    {
+      "path": "reports/evaluation_report.md",
+      "exists": true
+    },
+    {
+      "path": "reports/repo_health.json",
+      "exists": true
+    },
+    {
+      "path": "reports/repo_health.md",
+      "exists": true
+    },
+    {
+      "path": "reports/dependency_audit.json",
+      "exists": true
+    },
+    {
+      "path": "reports/dependency_audit.md",
+      "exists": true
+    },
+    {
+      "path": "reports/publication_readiness.json",
+      "exists": true
+    },
+    {
+      "path": "reports/publication_readiness.md",
+      "exists": true
+    },
+    {
+      "path": "docs/SCHEMAS.md",
+      "exists": true
+    },
+    {
+      "path": "CHANGELOG.md",
+      "exists": true
+    },
+    {
+      "path": "README.md",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/AgentStep.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/BudgetLineItem.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/BudgetPlan.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/ComplianceCheck.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/EvaluationResult.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/EvaluationScenario.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/FitScore.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/FunderRequirement.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/GrantDocument.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/OrganizationProfile.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/ProposalArtifact.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/ProposalPackage.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/QualityCheck.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/QualityReport.schema.json",
+      "exists": true
+    },
+    {
+      "path": "reports/schemas/ReviewerFinding.schema.json",
+      "exists": true
+    }
+  ],
+  "commands": [
+    [
+      "git",
+      "tag",
+      "-a",
+      "v0.1.0",
+      "-m",
+      "Agentic Grant Proposal Builder v0.1.0"
+    ],
+    [
+      "git",
+      "push",
+      "origin",
+      "v0.1.0"
+    ],
+    [
+      "gh",
+      "release",
+      "create",
+      "v0.1.0",
+      "reports/evaluation_results.json",
+      "reports/evaluation_report.md",
+      "reports/repo_health.json",
+      "reports/repo_health.md",
+      "reports/dependency_audit.json",
+      "reports/dependency_audit.md",
+      "reports/publication_readiness.json",
+      "reports/publication_readiness.md",
+      "docs/SCHEMAS.md",
+      "CHANGELOG.md",
+      "README.md",
+      "reports/schemas/AgentStep.schema.json",
+      "reports/schemas/BudgetLineItem.schema.json",
+      "reports/schemas/BudgetPlan.schema.json",
+      "reports/schemas/ComplianceCheck.schema.json",
+      "reports/schemas/EvaluationResult.schema.json",
+      "reports/schemas/EvaluationScenario.schema.json",
+      "reports/schemas/FitScore.schema.json",
+      "reports/schemas/FunderRequirement.schema.json",
+      "reports/schemas/GrantDocument.schema.json",
+      "reports/schemas/OrganizationProfile.schema.json",
+      "reports/schemas/ProposalArtifact.schema.json",
+      "reports/schemas/ProposalPackage.schema.json",
+      "reports/schemas/QualityCheck.schema.json",
+      "reports/schemas/QualityReport.schema.json",
+      "reports/schemas/ReviewerFinding.schema.json",
+      "--repo",
+      "pshuklabaidya/agentic-grant-proposal-builder",
+      "--title",
+      "Agentic Grant Proposal Builder v0.1.0",
+      "--notes-file",
+      "reports/release/release_notes_v0.1.0.md",
+      "--verify-tag"
+    ]
+  ]
+}
