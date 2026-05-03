@@ -1,7 +1,7 @@
 # Repository Health Report
 
-Total checks: 52
-Passed checks: 52
+Total checks: 57
+Passed checks: 57
 Failed checks: 0
 Health score: 100.0%
 
@@ -9,6 +9,11 @@ Health score: 100.0%
 
 | Check | Status | Details |
 |---|---:|---|
+| required_file:sample_data/cli_example/program_notes.txt | pass | found |
+| required_file:sample_data/cli_example/funder_guidance.txt | pass | found |
+| required_file:sample_data/cli_example/profile.json | pass | found |
+| required_file:scripts/cli_smoke.py | pass | found |
+| required_file:docs/CLI_EXAMPLES.md | pass | found |
 | required_file:src/agentic_grant_proposal_builder/cli.py | pass | found |
 | required_file:docs/CLI.md | pass | found |
 | required_file:scripts/docker_smoke.py | pass | found |

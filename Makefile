@@ -1,5 +1,5 @@
 .RECIPEPREFIX := >
-.PHONY: install lint test eval cli-demo version audit health health smoke docker-build docker-run docker-smoke check run clean status
+.PHONY: install lint test eval cli-demo cli-smoke version audit health health smoke docker-build docker-run docker-smoke check run clean status
 
 install:
 >python -m pip install --upgrade pip
@@ -16,6 +16,9 @@ eval:
 
 cli-demo:
 >agpb build-scenario education_access
+
+cli-smoke:
+>python scripts/cli_smoke.py
 
 version:
 >python scripts/check_version.py
@@ -38,7 +41,7 @@ docker-run:
 docker-smoke:
 >python scripts/docker_smoke.py
 
-check: lint test eval cli-demo version audit version audit health health health smoke docker-build docker-run docker-smoke
+check: lint test eval cli-demo cli-smoke version audit version audit health health health smoke docker-build docker-run docker-smoke
 
 run:
 >streamlit run src/agentic_grant_proposal_builder/app.py

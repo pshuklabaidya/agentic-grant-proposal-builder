@@ -39,6 +39,9 @@ jobs:
       - name: Run tests
         run: python -m pytest
 
+      - name: Run CLI smoke test
+        run: python scripts/cli_smoke.py
+
       - name: Run evaluation harness
         run: python -m agentic_grant_proposal_builder.evaluation
 

@@ -87,3 +87,7 @@ OpenAI Agents SDK mode runs when these values are configured:
 
 - [Command Line Interface](CLI.md)
 - CLI module: `src/agentic_grant_proposal_builder/cli.py`
+
+- [CLI Examples](CLI_EXAMPLES.md)
+- CLI smoke script: `scripts/cli_smoke.py`
+- CLI sample profile: `sample_data/cli_example/profile.json`

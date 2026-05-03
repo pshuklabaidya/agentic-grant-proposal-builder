@@ -82,6 +82,21 @@ When `OPENAI_API_KEY` exists and `AGPB_USE_OPENAI_AGENTS=1`, OpenAI-powered tool
 
 
 
+
+## CLI Examples
+
+CLI examples:
+
+    docs/CLI_EXAMPLES.md
+
+Run the CLI smoke test:
+
+    python scripts/cli_smoke.py
+
+Build from sample files:
+
+    agpb build-files --profile sample_data/cli_example/profile.json --documents sample_data/cli_example/funder_guidance.txt sample_data/cli_example/program_notes.txt --stem riverbend
+
 ## Command Line Interface
 
 CLI guide:

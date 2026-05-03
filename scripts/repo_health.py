@@ -13,6 +13,11 @@ class HealthCheck:
 
 
 REQUIRED_FILES = [
+    "sample_data/cli_example/program_notes.txt",
+    "sample_data/cli_example/funder_guidance.txt",
+    "sample_data/cli_example/profile.json",
+    "scripts/cli_smoke.py",
+    "docs/CLI_EXAMPLES.md",
     "src/agentic_grant_proposal_builder/cli.py",
     "docs/CLI.md",
     "scripts/docker_smoke.py",
