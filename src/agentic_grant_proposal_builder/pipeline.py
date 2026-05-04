@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 from agentic_grant_proposal_builder.agents import llm_proposal
 from agentic_grant_proposal_builder.models import GrantDocument, OrganizationProfile, ProposalArtifact
 from agentic_grant_proposal_builder.openai_workflow import run_openai_agent_workflow
@@ -7,6 +9,23 @@ from agentic_grant_proposal_builder.retrieval import LocalRetriever, RetrievedCh
 from agentic_grant_proposal_builder.reviewer import build_proposal_package
 from agentic_grant_proposal_builder.scoring import score_funder_fit
 from agentic_grant_proposal_builder.workflow import ProposalPackage
+
+def _evidence_top_k() -> int:
+    value = os.getenv("AGPB_EVIDENCE_TOP_K")
+
+    if not value:
+        try:
+            import streamlit as st
+
+            value = st.secrets.get("AGPB_EVIDENCE_TOP_K")
+        except Exception:
+            value = None
+
+    try:
+        return max(6, int(str(value))) if value else 18
+    except ValueError:
+        return 18
+
 
 
 def build_proposal(
@@ -23,7 +42,7 @@ def build_proposal(
         ]
     )
 
-    evidence = retriever.search(query, top_k=6)
+    evidence = retriever.search(query, top_k=_evidence_top_k())
     fit_score = score_funder_fit(profile, evidence)
     openai_outputs = run_openai_agent_workflow(profile, fit_score, evidence)
 

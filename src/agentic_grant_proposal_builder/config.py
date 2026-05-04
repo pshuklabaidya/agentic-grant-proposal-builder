@@ -51,6 +51,8 @@ def load_runtime_config() -> RuntimeConfig:
     _set_env_from_streamlit_secret("AGPB_MODEL")
     _set_env_from_streamlit_secret("AGPB_USE_OPENAI_AGENTS")
     _set_env_from_streamlit_secret("OPENAI_AGENTS_DISABLE_TRACING")
+    _set_env_from_streamlit_secret("AGPB_DRAFT_DETAIL")
+    _set_env_from_streamlit_secret("AGPB_EVIDENCE_TOP_K")
 
     api_key_detected = bool(os.getenv("OPENAI_API_KEY"))
     model = os.getenv("AGPB_MODEL", "gpt-4.1-mini")

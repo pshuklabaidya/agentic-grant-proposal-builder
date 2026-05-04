@@ -8,15 +8,9 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from agentic_grant_proposal_builder.agents import deterministic_proposal
 from agentic_grant_proposal_builder.models import FitScore, OrganizationProfile, ProposalArtifact
 from agentic_grant_proposal_builder.retrieval import RetrievedChunk
-from agentic_grant_proposal_builder.reviewer import (
-    build_budget_plan,
-    build_funder_requirements,
-    build_quality_report,
-    build_reviewer_findings,
-)
+from agentic_grant_proposal_builder.reviewer import build_budget_plan
 from agentic_grant_proposal_builder.workflow import (
     BudgetPlan,
     FunderRequirement,
@@ -43,6 +37,25 @@ class OpenAIAgentOutputs(BaseModel):
 
 def openai_agents_enabled() -> bool:
     return bool(os.getenv("OPENAI_API_KEY")) and os.getenv("AGPB_USE_OPENAI_AGENTS", "1") == "1"
+
+
+
+def _format_evidence(chunks: list[RetrievedChunk]) -> str:
+    if not chunks:
+        return "No retrieved evidence."
+
+    blocks = []
+    for index, chunk in enumerate(chunks, start=1):
+        blocks.append(
+            "\n".join(
+                [
+                    f"[E{index}] Source: {chunk.source}",
+                    f"[E{index}] Relevance: {chunk.score:.3f}",
+                    f"[E{index}] Text: {chunk.text}",
+                ]
+            )
+        )
+    return "\n\n".join(blocks)
 
 
 def _run_async_safely(coro_factory: Callable[[], Any]) -> Any:
@@ -73,7 +86,7 @@ async def _run_agent_workflow(
     @function_tool
     def get_retrieved_evidence() -> str:
         """Return retrieved funder evidence from uploaded documents."""
-        return "\n\n".join(chunk.text for chunk in evidence) or "No retrieved evidence."
+        return _format_evidence(evidence)
 
     @function_tool
     def get_fit_score() -> str:
@@ -93,7 +106,12 @@ async def _run_agent_workflow(
     requirements_agent = Agent(
         name="Funder Requirements Extractor Agent",
         model=model,
-        instructions="Extract funder requirements from retrieved evidence.",
+        instructions=(
+            "Extract a detailed funder requirements matrix from retrieved evidence. "
+            "Return concrete requirements, not generic categories. Include eligibility, applicant type, geography, population, required proposal sections, review criteria, budget rules, allowable or unallowable costs, cost sharing, attachments, data management, reporting, deadlines, page limits, and compliance risks when present. "
+            "Each requirement must include priority and evidence. Evidence must cite the retrieved evidence ID or exact source phrase. "
+            "If the guidance is incomplete, mark the requirement as requiring human verification rather than inventing missing rules."
+        ),
         tools=[get_retrieved_evidence, list_evidence_sources],
         output_type=FunderRequirementsOutput,
     )
@@ -101,7 +119,18 @@ async def _run_agent_workflow(
     proposal_agent = Agent(
         name="Grant Proposal Writer Agent",
         model=model,
-        instructions="Draft a grounded grant proposal from applicant profile and evidence.",
+        instructions=(
+            "You are a senior grant writer and federal proposal strategist. "
+            "Draft a rich, funder-specific grant proposal using only the applicant profile, fit score, and retrieved evidence. "
+            "Every section must be specific to the applicant, the funder opportunity, the target population, the project duration, and the requested budget. "
+            "Use concrete program activities, staffing logic, implementation phases, measurable outputs, measurable outcomes, data sources, reporting cadence, risk controls, and sustainability mechanisms. "
+            "Do not write generic phrases such as 'coordinated support,' 'measurable outcomes,' or 'continuous improvement' unless they are immediately followed by specific operational details. "
+            "Ground funder alignment in retrieved evidence. Reference evidence IDs like [E1], [E2], and [E3] inside the prose when a claim depends on funder guidance. "
+            "Executive summary must be 250-400 words. Need statement must be 500-800 words. Project design must be 700-1000 words. Outcomes must include a numbered target table in prose. "
+            "Budget narrative must explain each major line item, why it is necessary, and how it supports implementation. Evaluation plan must define indicators, baseline source, target, collection method, frequency, responsible owner, and use of findings. "
+            "Sustainability must identify post-award funding, institutionalization, partner commitments, data assets, and reusable infrastructure. "
+            "Reviewer risks must be specific, funder-aware, and actionable."
+        ),
         tools=[
             get_applicant_profile,
             get_retrieved_evidence,
@@ -114,7 +143,12 @@ async def _run_agent_workflow(
     reviewer_agent = Agent(
         name="Grant Reviewer Agent",
         model=model,
-        instructions="Return reviewer findings with severity and fixes.",
+        instructions=(
+            "Act as a skeptical grant reviewer. Review the proposal against the retrieved funder guidance, fit score, applicant profile, and likely review criteria. "
+            "Find weaknesses that would reduce reviewer confidence: generic need statement, missing eligibility proof, weak evidence, vague implementation plan, unclear staffing, unsupported outcomes, budget misalignment, missing evaluation detail, sustainability weakness, compliance risk, or poor funder-priority alignment. "
+            "Each finding must state the exact weakness, why it matters for this funder, the proposal section affected, and a concrete revision that would fix it. "
+            "Prefer specific medium and high findings over generic low findings."
+        ),
         tools=[
             get_applicant_profile,
             get_retrieved_evidence,
@@ -127,7 +161,14 @@ async def _run_agent_workflow(
     budget_agent = Agent(
         name="Budget Narrative Agent",
         model=model,
-        instructions="Create budget line items and a budget narrative.",
+        instructions=(
+            "Create a detailed grant budget and budget narrative. "
+            "Use the requested amount from the applicant profile as the total request. "
+            "Allocate the budget across personnel, fringe or benefits if appropriate, program delivery, participant support, technology or data systems, evaluation, travel or convening if justified, indirect costs, and administration. "
+            "Every line item must include a calculation basis, implementation purpose, funder allowability caveat, and relationship to outcomes. "
+            "Do not use round-number filler without justification. "
+            "The narrative must explain how the budget supports the work plan and why the cost structure is reasonable."
+        ),
         tools=[
             get_applicant_profile,
             get_retrieved_evidence,
@@ -140,7 +181,13 @@ async def _run_agent_workflow(
     quality_agent = Agent(
         name="Proposal Quality Gate Agent",
         model=model,
-        instructions="Evaluate readiness and unresolved proposal risks.",
+        instructions=(
+            "Evaluate whether the proposal package is ready for submission. "
+            "Use the proposal, funder requirements, reviewer findings, budget plan, fit score, and retrieved evidence. "
+            "Score readiness strictly. Flag any unresolved high-priority funder requirement, missing eligibility confirmation, missing local data, missing measurable target, weak budget allowability proof, vague implementation detail, or missing evidence citation. "
+            "Each check must include status, severity, finding, and exact recommended fix. "
+            "The final recommendation must tell the user what to revise before submission."
+        ),
         tools=[
             get_applicant_profile,
             get_retrieved_evidence,
@@ -211,18 +258,4 @@ def run_openai_agent_workflow(
     if not openai_agents_enabled():
         return None
 
-    try:
-        return _run_async_safely(lambda: _run_agent_workflow(profile, fit_score, evidence))
-    except Exception:
-        proposal = deterministic_proposal(profile, evidence)
-        requirements = build_funder_requirements(evidence)
-        findings = build_reviewer_findings(proposal, fit_score, evidence, requirements)
-        budget = build_budget_plan(profile)
-        quality = build_quality_report(proposal, fit_score, evidence, requirements, findings, budget)
-        return OpenAIAgentOutputs(
-            funder_requirements=requirements,
-            proposal=proposal,
-            reviewer_findings=findings,
-            budget_plan=budget,
-            quality_report=quality,
-        )
+    return _run_async_safely(lambda: _run_agent_workflow(profile, fit_score, evidence))
