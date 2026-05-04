@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import asyncio
+import importlib
 import concurrent.futures
 import os
+import sys
+from pathlib import Path
 from collections.abc import Callable
 from typing import Any
 
@@ -40,6 +43,35 @@ def openai_agents_enabled() -> bool:
 
 
 
+
+def _load_openai_agents_sdk() -> Any:
+    """Load the third-party OpenAI Agents SDK without resolving to the local agents.py file."""
+
+    package_dir = Path(__file__).resolve().parent
+    removed_paths: list[str] = []
+
+    for entry in list(sys.path):
+        try:
+            if Path(entry).resolve() == package_dir:
+                sys.path.remove(entry)
+                removed_paths.append(entry)
+        except (OSError, RuntimeError):
+            continue
+
+    existing_agents = sys.modules.get("agents")
+    existing_agents_file = getattr(existing_agents, "__file__", "") if existing_agents else ""
+
+    if existing_agents_file and Path(existing_agents_file).resolve() == package_dir / "agents.py":
+        sys.modules.pop("agents", None)
+
+    try:
+        return importlib.import_module("agents")
+    finally:
+        for entry in reversed(removed_paths):
+            if entry not in sys.path:
+                sys.path.insert(0, entry)
+
+
 def _format_evidence(chunks: list[RetrievedChunk]) -> str:
     if not chunks:
         return "No retrieved evidence."
@@ -60,13 +92,16 @@ def _format_evidence(chunks: list[RetrievedChunk]) -> str:
 
 def _run_async_safely(coro_factory: Callable[[], Any]) -> Any:
     try:
-        asyncio.get_running_loop()
+        loop = asyncio.get_running_loop()
     except RuntimeError:
-        return asyncio.run(coro_factory())
+        loop = None
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-        future = executor.submit(lambda: asyncio.run(coro_factory()))
-        return future.result()
+    if loop and loop.is_running():
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(lambda: asyncio.run(coro_factory()))
+            return future.result()
+
+    return asyncio.run(coro_factory())
 
 
 async def _run_agent_workflow(
@@ -74,7 +109,10 @@ async def _run_agent_workflow(
     fit_score: FitScore,
     evidence: list[RetrievedChunk],
 ) -> OpenAIAgentOutputs:
-    from agents import Agent, Runner, function_tool
+    agents_sdk = _load_openai_agents_sdk()
+    Agent = agents_sdk.Agent
+    Runner = agents_sdk.Runner
+    function_tool = agents_sdk.function_tool
 
     model = os.getenv("AGPB_MODEL", "gpt-4.1-mini")
 
